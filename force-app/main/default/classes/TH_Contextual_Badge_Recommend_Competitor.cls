@@ -63,7 +63,7 @@ global class TH_Contextual_Badge_Recommend_Competitor {
     public static List<trailheadapp__Badge__c> getBadges(String recordID) {
         
         Integer i = 1;
-        String query = 'SELECT Id, trailheadapp__Badge_Icon__c, Badge_Hyperlink__c, trailheadapp__Icon__c, Name, trailheadapp__URL__c FROM trailheadapp__Badge__c ';
+        String query = 'SELECT Id, trailheadapp__Badge_Icon__c, trailheadapp__Icon__c, Name, trailheadapp__URL__c FROM trailheadapp__Badge__c ';
         //System.debug('THIS IS THE USER: '+UserInfo.getUserId());
         for (Opportunity opp : [select id, Competitor__c from Opportunity where Id = :recordID]){
         	

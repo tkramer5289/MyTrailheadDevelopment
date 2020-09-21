@@ -62,7 +62,7 @@ global class TH_Contextual_Badge_Recommend_UserTag {
     public static List<trailheadapp__Badge__c> getBadges() {
         
         Integer i = 1;
-        String query = 'SELECT Id, trailheadapp__Badge_Icon__c, Badge_Hyperlink__c, trailheadapp__Icon__c, Name, trailheadapp__URL__c FROM trailheadapp__Badge__c ';
+        String query = 'SELECT Id, trailheadapp__Badge_Icon__c, trailheadapp__Icon__c, Name, trailheadapp__URL__c FROM trailheadapp__Badge__c ';
         System.debug('THIS IS THE USER: '+UserInfo.getUserId());
         for (User_Tag__c ut : [select Id, Name, Tag__r.Name from User_Tag__c where User__c = :UserInfo.getUserId()]){
         	
