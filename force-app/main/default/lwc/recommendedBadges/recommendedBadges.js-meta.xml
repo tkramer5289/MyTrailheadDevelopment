@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <masterLabel>MyTrailhead Badge Recommendation</masterLabel>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property label="Lightning Card Title" name="lightningCardTitle" type="String" default="Recommended Learnings"/>
+            <property label="Products Label" name="productsLabel" type="String" default="Products:"/>
+            <property label="Tags Label" name="tagsLabel" type="String" default="Tags:"/>
+            <property label="Sort By Relevance Button Label" name="relevanceButtonLabel" type="String" default="Relevance"/>
+            <property label="Sort By Most Recent Button Label" name="mostRecentButtonLabel" type="String" default="Most Recent"/>
+            <property label="Refresh Button Label" name="refreshButtonLabel" type="String" default="Refresh"/>
+            <property label="Lightning Card Icon" name="lightningCardIcon" type="String" default="custom:custom91" description="Refer to https://lightningdesignsystem.com/icons/ for more icons"/>
+            <property label="Lightning Card Icon Size" name="lightningCardIconSize" type="String" default="small" description="Refer to https://lightningdesignsystem.com/icons/ for more icons"/>
+            <property label="Recommendations by Quantity?" name="recommendByQuantity" type="Boolean" default="true"/>
+            <property label="Recommendations by Most Recent?" name="recommendByMostRecent" type="Boolean" default="false"/>
+            <!--custom icon: custom91, custom20, custom53; standard icon: reward--></targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

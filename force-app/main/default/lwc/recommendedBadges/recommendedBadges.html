@@ -1,0 +1,40 @@
+<template>
+    <template if:true={hasBadges}>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name={lightningCardIcon} size={lightningCardIconSize}></lightning-icon>
+            <span> {lightningCardTitle}</span>
+        </h3>
+        <lightning-button slot="actions" label={relevanceButtonLabel} title={relevanceButtonLabel} onclick={relevanceHandleClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button slot="actions" label={mostRecentButtonLabel} title={mostRecentButtonLabel} onclick={mostRecentHandleClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button slot="footer" label={refreshButtonLabel} title={refreshButtonLabel} onclick={relevanceHandleClick} class="slds-m-left_x-small"></lightning-button>
+        <template for:each={badgeArray} for:item="badge">
+           
+        <template if:true={recommendByQuantity}>
+        <div class="slds-p-around_medium lgc-bg" key={badge.Id}>
+            <lightning-tile type="media">
+                <lightning-avatar slot="media" src={badge.badgeIcon__c} fallback-icon-name="standard:person_account" alternative-text={badge.BadgeName__c}></lightning-avatar>
+                <a href={badge.badgeURL__c} target="_blank">{badge.BadgeName__c}</a>
+                <ul>
+                    <li class="slds-item">{productsLabel} {badge.associatedProducts__c}</li>
+                    <li class="slds-item">{tagsLabel} {badge.associatedTags__c}</li>
+                </ul>
+            </lightning-tile>
+        </div>
+        </template>
+        <template if:true={recommendByMostRecent}>
+            <div class="slds-p-around_medium lgc-bg" key={badge.Id}>
+                <lightning-tile type="media">
+                    <lightning-avatar slot="media" src={badge.badgeIcon__c} fallback-icon-name="standard:person_account" alternative-text={badge.BadgeName__c}></lightning-avatar>
+                    <a href={badge.badgeURL__c} target="_blank">{badge.BadgeName__c}</a>
+                    <ul>
+                        <li class="slds-item">{productsLabel} {badge.associatedProducts__c}</li>
+                        <li class="slds-item">{tagsLabel} {badge.associatedTags__c}</li>
+                    </ul>
+                </lightning-tile>
+            </div>
+            </template>
+        </template>
+    </lightning-card>
+    </template>
+</template>
